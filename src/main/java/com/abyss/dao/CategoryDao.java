@@ -75,4 +75,8 @@ public class CategoryDao {
     private void printMaster3() {
         System.out.println("主分支三次提交");
     }
+    private void printDevPoint() {
+        System.out.println("分类中指定撤销的操作");
+    }
+
 }

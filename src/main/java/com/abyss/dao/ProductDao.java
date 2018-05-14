@@ -62,4 +62,8 @@ public class ProductDao {
         }
         return list;
     }
+
+    private void printDevPoint() {
+        System.out.println("商品中指定撤销的操作");
+    }
 }
