@@ -70,6 +70,6 @@ public class ProductDao {
         System.out.println("发展合并后的提交");
     }
     private void printDevPoint2() {
-        System.out.println("这是我进行中的功能.....");
+        System.out.println("功能完成");
     }
 }
