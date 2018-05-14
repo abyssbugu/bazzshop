@@ -67,6 +67,6 @@ public class CategoryDao {
     }
 
     private void printTest() {
-        System.out.println("开发分支");
+        System.out.println("主分支");
     }
 }
