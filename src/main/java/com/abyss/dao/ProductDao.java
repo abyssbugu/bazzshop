@@ -16,8 +16,13 @@ import java.util.List;
  */
 public class ProductDao {
 
+<<<<<<< HEAD
     private QueryRunner queryRunner = new QueryRunner(JDBCUtils.getDataSource());
+    private QueryRunner run = new QueryRunner();
+=======
+    public QueryRunner queryRunner = new QueryRunner(JDBCUtils.getDataSource());
     QueryRunner run = new QueryRunner();
+>>>>>>> 83265da... 还未完成
 
 
     public List<Product> findAllProduct() {
@@ -63,13 +68,28 @@ public class ProductDao {
         return list;
     }
 
-    private void printDevPoint() {
+    public void printDevPoint() {
         System.out.println("商品中指定撤销的操作");
     }
-    private void printDevInit() {
+
+    public void printDevInit() {
         System.out.println("发展合并后的提交");
     }
-    private void printDevPoint2() {
+
+    public void printDevPoint2() {
         System.out.println("功能完成");
     }
+
+    public void printDevPoint3() {
+        System.out.println("release V1.0");
+    }
+
+    public void printDevPoint4() {
+        System.out.println("版本V2.0 start");
+    }
+
+    public void printDev4() {
+        System.out.println("开发开始---dev");
+    }
+
 }
