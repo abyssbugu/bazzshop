@@ -30,7 +30,7 @@ public class CategoryDao {
     public List<Category> queryAllCategory() {
         List<Category> query;
         try {
-            query = queryRunner.query("select * from category", new BeanListHandler<>(Category.class));
+            query = queryRunner.query("select * from category", new BeanListHandler<Category>(Category.class));
         } catch (SQLException e) {
             e.printStackTrace();
             throw new RuntimeException("查询所有分类失败");
@@ -75,4 +75,8 @@ public class CategoryDao {
     private void printMaster3() {
         System.out.println("主分支三次提交");
     }
+    private void printDevPoint() {
+        System.out.println("分类中指定撤销的操作");
+    }
+
 }
