@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<c3p0-config>
+<!-- 默认连接的数据库 -->
+	<default-config>
+		<property name="driverClass">com.mysql.jdbc.Driver</property>
+		<property name="jdbcUrl">jdbc:mysql://localhost:3306/test1</property>
+		<property name="user">root</property>
+		<property name="password">000000</property>
+		<!-- 连接池初始化时能建立的物理连接的数目 -->
+		<property name="initialPoolSize">5</property>
+		<!-- 连接池能包含的物理连接的最小数目 -->
+		<property name="minPoolSize">5</property>
+		<!-- 连接池能包含的物理连接的最大数目 -->
+		<property name="maxPoolSize">20</property>
+	</default-config> 
+	
+	<!-- 还可以配置其他的数据库 -->
+	<!--<named-config name="oracle">-->
+		<!--<property name="driverClass">com.mysql.jdbc.Driver</property>-->
+		<!--<property name="jdbcUrl">jdbc:mysql:///web_test3</property>-->
+		<!--<property name="user">root</property>-->
+		<!--<property name="password">root</property>-->
+	<!--</named-config>-->
+</c3p0-config>
