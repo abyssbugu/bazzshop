@@ -30,7 +30,7 @@ public class CategoryDao {
     public List<Category> queryAllCategory() {
         List<Category> query;
         try {
-            query = queryRunner.query("select * from category", new BeanListHandler<Category>(Category.class));
+            query = queryRunner.query("select * from category", new BeanListHandler<>(Category.class));
         } catch (SQLException e) {
             e.printStackTrace();
             throw new RuntimeException("查询所有分类失败");
@@ -59,10 +59,14 @@ public class CategoryDao {
     public void deleteCategoryById(Connection conn, String cid) {
         QueryRunner runner = new QueryRunner();
         try {
-            runner.update(conn,"delete from category where cid=?", cid);
+            runner.update(conn, "delete from category where cid=?", cid);
         } catch (SQLException e) {
             e.printStackTrace();
             throw new RuntimeException("删除失败");
         }
+    }
+
+    private void printTest() {
+        System.out.println("开发分支");
     }
 }
