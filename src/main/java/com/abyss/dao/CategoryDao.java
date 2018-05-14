@@ -59,16 +59,17 @@ public class CategoryDao {
     public void deleteCategoryById(Connection conn, String cid) {
         QueryRunner runner = new QueryRunner();
         try {
-            runner.update(conn,"delete from category where cid=?", cid);
+            runner.update(conn, "delete from category where cid=?", cid);
         } catch (SQLException e) {
             e.printStackTrace();
             throw new RuntimeException("删除失败");
         }
     }
 
-
-
     private void printDev() {
         System.out.println("子分支");
+    }
+    private void printDev2() {
+        System.out.println("子分支要撤销的操作");
     }
 }
