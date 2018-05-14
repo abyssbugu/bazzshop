@@ -72,4 +72,7 @@ public class CategoryDao {
     private void printMaster() {
         System.out.println("主分支二次提交");
     }
+    private void printMaster3() {
+        System.out.println("主分支三次提交");
+    }
 }
