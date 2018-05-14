@@ -66,4 +66,7 @@ public class ProductDao {
     private void printDevPoint() {
         System.out.println("商品中指定撤销的操作");
     }
+    private void printDevPoint2() {
+        System.out.println("这是我进行中的功能.....");
+    }
 }
