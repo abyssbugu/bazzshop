@@ -36,4 +36,8 @@ public class LoginDao {
         }
         return update > 0;
     }
+
+    public void printSome() {
+        System.out.println("打印点什么");
+    }
 }
