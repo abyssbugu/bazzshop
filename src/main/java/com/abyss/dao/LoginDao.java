@@ -35,8 +35,5 @@ public class LoginDao {
             throw new RuntimeException("用户注册sql异常");
         }
         return update > 0;
-
-
-
     }
 }
