@@ -66,17 +66,8 @@ public class CategoryDao {
         }
     }
 
-    private void printTest() {
-        System.out.println("主分支");
-    }
-    private void printMaster() {
-        System.out.println("主分支二次提交");
-    }
-    private void printMaster3() {
-        System.out.println("主分支三次提交");
-    }
     private void printDevPoint() {
-        System.out.println("分类中指定撤销的操作");
+        System.out.println("清理完成!");
     }
 
 }
