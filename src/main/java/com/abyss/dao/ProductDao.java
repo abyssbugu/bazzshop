@@ -16,13 +16,8 @@ import java.util.List;
  */
 public class ProductDao {
 
-<<<<<<< HEAD
     private QueryRunner queryRunner = new QueryRunner(JDBCUtils.getDataSource());
     private QueryRunner run = new QueryRunner();
-=======
-    public QueryRunner queryRunner = new QueryRunner(JDBCUtils.getDataSource());
-    QueryRunner run = new QueryRunner();
->>>>>>> 83265da... 还未完成
 
 
     public List<Product> findAllProduct() {
