@@ -63,28 +63,13 @@ public class ProductDao {
         return list;
     }
 
-    public void printDevPoint() {
+    private void printDevPoint() {
         System.out.println("商品中指定撤销的操作");
     }
-
-    public void printDevInit() {
+    private void printDevInit() {
         System.out.println("发展合并后的提交");
     }
-
-    public void printDevPoint2() {
+    private void printDevPoint2() {
         System.out.println("功能完成");
     }
-
-    public void printDevPoint3() {
-        System.out.println("release V1.0");
-    }
-
-    public void printDevPoint4() {
-        System.out.println("版本V2.0 start");
-    }
-
-    public void printDev4() {
-        System.out.println("开发开始---dev");
-    }
-
 }
