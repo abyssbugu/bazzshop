@@ -7,8 +7,20 @@ import com.abyss.dao.UserDao;
  * description:
  */
 public class UserDaoImpl implements UserDao {
+    public UserDaoImpl() {
+        System.out.println("构造方法调用");
+    }
+
+    public void init() {
+        System.out.println("init被调用");
+    }
+
     @Override
     public void save() {
         System.out.println("持久层用户的保存");
+    }
+
+    public void destroy() {
+        System.out.println("destroy调用");
     }
 }

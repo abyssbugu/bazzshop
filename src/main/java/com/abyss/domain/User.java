@@ -14,6 +14,15 @@ public class User {
     private String hobby;
     private String email;
     private Integer age;
+    private Product product;
+
+    public User() {
+    }
+
+    public User(String username, String password) {
+        this.username = username;
+        this.password = password;
+    }
 
 
     public Integer getId() {
@@ -94,12 +103,17 @@ public class User {
                 "id=" + id +
                 ", username='" + username + '\'' +
                 ", password='" + password + '\'' +
-                ", age=" + age +
                 ", sex='" + sex + '\'' +
-                ", email='" + email + '\'' +
-                ", hobby=" + hobby +
-                ", address='" + address + '\'' +
                 ", description='" + description + '\'' +
+                ", address='" + address + '\'' +
+                ", hobby='" + hobby + '\'' +
+                ", email='" + email + '\'' +
+                ", age=" + age +
+                ", product=" + product +
                 '}';
+    }
+
+    public void setProduct(Product product) {
+        this.product = product;
     }
 }

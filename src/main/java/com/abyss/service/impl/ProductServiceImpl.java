@@ -1,6 +1,7 @@
 package com.abyss.service.impl;
 
 import com.abyss.dao.ProductDao;
+import com.abyss.dao.impl.ProductDaoImpl;
 import com.abyss.domain.PageBean;
 import com.abyss.domain.Product;
 import com.abyss.service.ProductService;
@@ -12,7 +13,7 @@ import java.util.List;
  * description:
  */
 public class ProductServiceImpl implements ProductService {
-    ProductDao dao = new ProductDao();
+    ProductDao dao = new ProductDaoImpl();
 
     @Override
     public List<Product> findAll() {

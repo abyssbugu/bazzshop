@@ -2,6 +2,16 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id="userDao" class="com.abyss.dao.impl.UserDaoImpl"/>
+    <bean id="userDao" class="com.abyss.dao.impl.UserDaoImpl" init-method="init" destroy-method="destroy"/>
     <bean id="loginDao" class="com.abyss.dao.impl.LoginDaoImpl"/>
+
+    <bean id="product" class="com.abyss.domain.Product">
+        <constructor-arg name="pname" value="MACBookPro"/>
+    </bean>
+    <bean id="user" class="com.abyss.domain.User">
+        <property name="username" value="BOSS"/>
+        <property name="password" value="321"/>
+        <property name="product" ref="product"/>
+    </bean>
+<!--<import resource="applicationContext2.xml"/>-->
 </beans>

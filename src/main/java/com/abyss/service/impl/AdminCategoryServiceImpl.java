@@ -2,6 +2,8 @@ package com.abyss.service.impl;
 
 import com.abyss.dao.CategoryDao;
 import com.abyss.dao.ProductDao;
+import com.abyss.dao.impl.CategoryDaoImpl;
+import com.abyss.dao.impl.ProductDaoImpl;
 import com.abyss.domain.Category;
 import com.abyss.utils.JDBCUtils;
 
@@ -14,7 +16,7 @@ import java.util.List;
  * description:
  */
 public class AdminCategoryServiceImpl {
-    CategoryDao dao = new CategoryDao();
+    CategoryDao dao = new CategoryDaoImpl();
 
     public void addCategory(Category category) {
         dao.insertCategory(category);
@@ -33,7 +35,7 @@ public class AdminCategoryServiceImpl {
     }
 
     public void deleteCategoryById(String cid) {
-        ProductDao productDao = new ProductDao();
+        ProductDao productDao = new ProductDaoImpl();
         Connection conn = null;
         try {
             conn = JDBCUtils.getConnection();
