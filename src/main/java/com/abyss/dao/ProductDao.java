@@ -17,7 +17,7 @@ import java.util.List;
 public class ProductDao {
 
     private QueryRunner queryRunner = new QueryRunner(JDBCUtils.getDataSource());
-    private QueryRunner run = new QueryRunner();
+    QueryRunner run = new QueryRunner();
 
 
     public List<Product> findAllProduct() {
@@ -71,5 +71,8 @@ public class ProductDao {
     }
     private void printDevPoint2() {
         System.out.println("功能完成");
+    }
+    private void printDevPoint3() {
+        System.out.println("release V1.0");
     }
 }
