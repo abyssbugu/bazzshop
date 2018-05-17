@@ -20,20 +20,16 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-//        request.setCharacterEncoding("utf-8");
-//        response.setCharacterEncoding("UTF-8");
         String username = request.getParameter("username");
         String password = request.getParameter("password");
         String isSave = request.getParameter("isSave");
         String checkCode = (String) request.getSession().getAttribute("checkCode");
         String checkCode2 = request.getParameter("checkcode");
         if (checkCode.equalsIgnoreCase(checkCode2)) {
-
-            System.out.println(isSave + "");
+            System.out.println(isSave+"我不好");
             LoginService service = new LoginServiceImpl();
             User user = service.login(username, password);
             request.setAttribute("username", username);
-//            PrintWriter writer = response.getWriter();
             if (user != null) {
                 HttpSession session = request.getSession();
                 session.setAttribute("userInfo", user);

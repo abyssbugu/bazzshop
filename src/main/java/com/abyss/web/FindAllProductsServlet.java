@@ -1,9 +1,11 @@
 package com.abyss.web;
 
+import com.abyss.dao.UserDao;
 import com.abyss.domain.PageBean;
 import com.abyss.domain.Product;
 import com.abyss.service.impl.ProductServiceImpl;
 import com.abyss.service.ProductService;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -23,7 +25,9 @@ public class FindAllProductsServlet extends HttpServlet {
         int pageNum = Integer.valueOf(request.getParameter("pageNum"));
         ProductService service = new ProductServiceImpl();
 //        List<Product> list = service.findAll();
-        PageBean pageBean= service.findProductsByPageNum(pageNum);
+
+
+        PageBean pageBean = service.findProductsByPageNum(pageNum);
         request.setAttribute("pageBean", pageBean);
         request.getRequestDispatcher("product_list.jsp").forward(request, response);
     }

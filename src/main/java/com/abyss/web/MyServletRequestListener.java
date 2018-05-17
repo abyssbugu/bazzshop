@@ -3,27 +3,27 @@ package com.abyss.web; /**
  * description:
  */
 
+import org.apache.log4j.PropertyConfigurator;
+
 import javax.servlet.*;
 import javax.servlet.http.HttpSessionEvent;
 import javax.servlet.http.HttpSessionListener;
 
 public class MyServletRequestListener implements ServletContextListener,
-        HttpSessionListener ,ServletRequestListener {
+        HttpSessionListener, ServletRequestListener {
     // Public constructor is required by servlet spec
     public MyServletRequestListener() {
     }
 
     public void contextInitialized(ServletContextEvent sce) {
-//        Timer timer = new Timer(
-//        timer.schedule(new TimerTask() {
-//            @Override
-//            public void run() {
-//                System.out.println(new Date().toLocaleString());
-//            }
-//        }, 0, 1000);
-        //初始化在线人数
+        ServletContext ctx = sce.getServletContext();
+        String prefix = ctx.getRealPath("/");
+        // Log4J
+        String log4jFile = ctx.getInitParameter("log4j");
+        String log4jConfigPath = prefix + log4jFile;
+        PropertyConfigurator.configure(log4jConfigPath);
+        System.out.println("contextInitialized");
         sce.getServletContext().setAttribute("onlineNum", 0);
-
     }
 
     public void contextDestroyed(ServletContextEvent sce) {
