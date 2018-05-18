@@ -6,6 +6,8 @@ import com.abyss.utils.JDBCUtils;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
 import org.apache.commons.dbutils.handlers.ScalarHandler;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -15,10 +17,14 @@ import java.util.List;
  * Created by Abyss on 2018/5/5.
  * description:
  */
+@Repository("productDao")
 public class ProductDaoImpl implements ProductDao {
 
-    private QueryRunner queryRunner = new QueryRunner(JDBCUtils.getDataSource());
+//    private QueryRunner queryRunner = new QueryRunner(JDBCUtils.getDataSource());
+
     QueryRunner run = new QueryRunner();
+    @Autowired
+    private QueryRunner queryRunner;
 
 
     @Override

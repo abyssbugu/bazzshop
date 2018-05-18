@@ -1,11 +1,16 @@
 package com.abyss.domain;
 
+import org.springframework.context.annotation.Scope;
+import org.springframework.stereotype.Component;
+
 import java.util.List;
 
 /**
  * Created by Abyss on 2018/5/6.
  * description:
  */
+@Component("pageBean")
+@Scope("prototype")
 public class PageBean {
     //总数
     int count;
