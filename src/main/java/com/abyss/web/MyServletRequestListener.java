@@ -16,13 +16,13 @@ public class MyServletRequestListener implements ServletContextListener,
     }
 
     public void contextInitialized(ServletContextEvent sce) {
-//        ServletContext ctx = sce.getServletContext();
-//        String prefix = ctx.getRealPath("/");
-//        // Log4J
-//        String log4jFile = ctx.getInitParameter("log4j");
-//        String log4jConfigPath = prefix + log4jFile;
-//        PropertyConfigurator.configure(log4jConfigPath);
-        System.out.println("contextInitialized");
+        ServletContext ctx = sce.getServletContext();
+        String prefix = ctx.getRealPath("/");
+        // Log4J
+        String log4jFile = ctx.getInitParameter("log4j");
+        String log4jConfigPath = prefix + log4jFile;
+        PropertyConfigurator.configure(log4jConfigPath);
+        System.out.println("log4j-init");
         sce.getServletContext().setAttribute("onlineNum", 0);
     }
 
