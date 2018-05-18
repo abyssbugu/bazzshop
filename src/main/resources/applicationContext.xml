@@ -1,17 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-    <bean id="userDao" class="com.abyss.dao.impl.UserDaoImpl" init-method="init" destroy-method="destroy"/>
-    <bean id="loginDao" class="com.abyss.dao.impl.LoginDaoImpl"/>
-
-    <bean id="product" class="com.abyss.domain.Product">
-        <constructor-arg name="pname" value="MACBookPro"/>
-    </bean>
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+        http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
     <bean id="user" class="com.abyss.domain.User">
         <property name="username" value="BOSS"/>
         <property name="password" value="321"/>
-        <property name="product" ref="product"/>
     </bean>
-<!--<import resource="applicationContext2.xml"/>-->
+    <!--开启注解扫描-->
+    <context:component-scan base-package="com.abyss"/>
 </beans>

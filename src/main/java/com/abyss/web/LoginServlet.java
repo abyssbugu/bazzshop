@@ -3,6 +3,7 @@ package com.abyss.web;
 import com.abyss.domain.User;
 import com.abyss.service.LoginService;
 import com.abyss.service.impl.LoginServiceImpl;
+import org.springframework.beans.factory.annotation.Autowired;
 
 import javax.servlet.ServletException;
 import javax.servlet.http.*;
@@ -13,6 +14,11 @@ import java.io.IOException;
  * description:
  */
 public class LoginServlet extends HttpServlet {
+
+
+//    @Autowired
+//    private LoginService service;
+
     @Override
     protected void doGet(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
         this.doPost(req, resp);
@@ -26,7 +32,7 @@ public class LoginServlet extends HttpServlet {
         String checkCode = (String) request.getSession().getAttribute("checkCode");
         String checkCode2 = request.getParameter("checkcode");
         if (checkCode.equalsIgnoreCase(checkCode2)) {
-            System.out.println(isSave+"我不好");
+            System.out.println(isSave+"我不太好6");
             LoginService service = new LoginServiceImpl();
             User user = service.login(username, password);
             request.setAttribute("username", username);

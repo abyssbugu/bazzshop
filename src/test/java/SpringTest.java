@@ -35,10 +35,10 @@ public class SpringTest {
         userDao.save();
     }
 
-    @Test
-    public void log4jTest() {
-        System.out.println(5 / 0);
-    }
+//    @Test
+//    public void log4jTest() {
+//        System.out.println(5 / 0);
+//    }
 
     @Test
     public void initTest() {
@@ -62,19 +62,19 @@ public class SpringTest {
         dao.save();
         ((ClassPathXmlApplicationContext) context).close();
     }
-
-    @Test
-    public void constructorDITest() {
-        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-        User user = (User) context.getBean("user");
-        System.out.println(user);
-    }
-    @Test
-    public void collectionDITest() {
-        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
-        CollectionBean collectionBean = (CollectionBean) context.getBean("collectionBean");
-        System.out.println(collectionBean);
-    }
+//
+//    @Test
+//    public void constructorDITest() {
+//        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+//        User user = (User) context.getBean("user");
+//        System.out.println(user);
+//    }
+//    @Test
+//    public void collectionDITest() {
+//        ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml");
+//        CollectionBean collectionBean = (CollectionBean) context.getBean("collectionBean");
+//        System.out.println(collectionBean);
+//    }
     @Test
     public void multiContextDITest() {
         ApplicationContext context = new ClassPathXmlApplicationContext("applicationContext.xml","applicationContext2.xml");

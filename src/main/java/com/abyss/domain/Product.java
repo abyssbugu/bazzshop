@@ -19,11 +19,6 @@ public class Product {
     public Product() {
 
     }
-
-    public Product(String pname) {
-        this.pname = pname;
-    }
-
     public String getPid() {
         return pid;
     }

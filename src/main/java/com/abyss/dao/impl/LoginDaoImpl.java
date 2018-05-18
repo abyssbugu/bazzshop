@@ -1,10 +1,13 @@
 package com.abyss.dao.impl;
 
 import com.abyss.dao.LoginDao;
+import com.abyss.dao.UserDao;
 import com.abyss.domain.User;
 import com.abyss.utils.JDBCUtils;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Repository;
 
 import java.sql.SQLException;
 
@@ -12,7 +15,10 @@ import java.sql.SQLException;
  * Created by Abyss on 2018/4/20.
  * description:
  */
+@Repository("loginDao")
 public class LoginDaoImpl implements LoginDao {
+
+
     @Override
     public User findUserByNameAndPwd(String name, String password) {
         QueryRunner queryRunner = new QueryRunner(JDBCUtils.getDataSource());

@@ -26,7 +26,7 @@ public class FindAllProductsServlet extends HttpServlet {
         ProductService service = new ProductServiceImpl();
 //        List<Product> list = service.findAll();
 
-
+        System.out.println("开始1");
         PageBean pageBean = service.findProductsByPageNum(pageNum);
         request.setAttribute("pageBean", pageBean);
         request.getRequestDispatcher("product_list.jsp").forward(request, response);
