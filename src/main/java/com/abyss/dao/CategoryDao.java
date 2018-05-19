@@ -20,4 +20,9 @@ public interface CategoryDao {
 
     void deleteCategoryById(Connection conn, String cid);
 
+    Double save();
+
+    void error();
+
+
 }

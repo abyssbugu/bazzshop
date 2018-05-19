@@ -72,8 +72,13 @@ public class CategoryDaoImpl implements CategoryDao {
         }
     }
 
-    private void printDevPoint() {
-        System.out.println("清理完成!");
+    public Double save() {
+        System.out.println("持久层：种类保存...");
+        return 10000.0;
+    }
+
+    public void error() {
+        int a = 5 / 0;
     }
 
 }

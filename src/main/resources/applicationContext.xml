@@ -2,16 +2,33 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:context="http://www.springframework.org/schema/context"
+       xmlns:aop="http://www.springframework.org/schema/aop"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
-        http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd">
+        http://www.springframework.org/schema/beans/spring-beans.xsd http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context.xsd http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop.xsd">
     <!--开启注解扫描-->
     <context:component-scan base-package="com.abyss"/>
+
 
     <bean id="user" class="com.abyss.domain.User">
         <property name="username" value="BOSS"/>
         <property name="password" value="321"/>
     </bean>
-
+    <bean id="categoryDao" class="com.abyss.dao.impl.CategoryDaoImpl"/>
+    <bean id="logAspectXml" class="com.abyss.aspect.LogAspectXml"/>
+    <!--AOP配置-->
+    <aop:config>
+        <!--配置切入点,告诉spring框架哪些方法需要被增强-->
+        <aop:pointcut id="pointcut1" expression="execution(* com.abyss.dao.CategoryDao.save(..))"/>
+        <aop:pointcut id="pointcut2" expression="execution(* com.abyss.dao.CategoryDao.findCategoryById(..))"/>
+        <aop:pointcut id="pointcut3" expression="execution(* com.abyss.dao.CategoryDao.error(..))"/>
+        <!--配置切面告诉spring调用哪个切面类的方法来增强-->
+        <aop:aspect ref="logAspectXml">
+            <aop:before method="writeLog" pointcut-ref="pointcut1"/>
+            <aop:after-returning method="afterReturning" pointcut-ref="pointcut1" returning="result"/>
+            <aop:around method="around" pointcut-ref="pointcut2"/>
+            <aop:after-throwing method="afterthrowing" pointcut-ref="pointcut3" throwing="ex"/>
+        </aop:aspect>
+    </aop:config>
     <bean id="queryRunner" class="org.apache.commons.dbutils.QueryRunner">
         <constructor-arg name="ds" ref="dataSource"/>
     </bean>
