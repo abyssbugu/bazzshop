@@ -26,8 +26,8 @@ public class AOPTest {
     public void findTest() {
         categoryDao.findCategoryById("1");
     }
-    @Test
-    public void throwingTest() {
-        categoryDao.error();
-    }
+//    @Test
+//    public void throwingTest() {
+//        categoryDao.error();
+//    }
 }

@@ -1,6 +1,5 @@
 import com.abyss.dao.UserDao;
 import com.abyss.domain.CollectionBean;
-import com.abyss.domain.User;
 import org.junit.Test;
 import org.springframework.beans.factory.xml.XmlBeanFactory;
 import org.springframework.context.ApplicationContext;

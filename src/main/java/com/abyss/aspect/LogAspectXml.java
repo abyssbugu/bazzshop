@@ -2,6 +2,8 @@ package com.abyss.aspect;
 
 import org.aspectj.lang.JoinPoint;
 import org.aspectj.lang.ProceedingJoinPoint;
+import org.aspectj.lang.annotation.*;
+import org.springframework.stereotype.Component;
 
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -10,7 +12,10 @@ import java.util.Date;
  * Created by Abyss on 2018/5/19.
  * description:
  */
+@Component("logAspectXml")
+@Aspect//表示该类为切面类
 public class LogAspectXml {
+    @Before("execution(* com.abyss.dao.CategoryDao.save(..))")
     public void writeLog() {
         System.out.println("记录日志...");
     }
@@ -33,6 +38,7 @@ public class LogAspectXml {
      * 应用场景： ATM取款机取款后，自动下发短信
      * 参数result:被增强那个方法的返回值
      */
+    @AfterReturning(value="execution(* com.abyss.dao.CategoryDao.save(..))",returning = "result")
     public void afterReturning(Object result){
         Date date = new Date();
         SimpleDateFormat sdf = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
@@ -46,6 +52,7 @@ public class LogAspectXml {
      * @param proceedingJoinPoint 正在执行的连接点
      * @return
      */
+    @Around("execution(* com.abyss.dao.CategoryDao.findCategoryById(..))")
     public Object around(ProceedingJoinPoint proceedingJoinPoint){
         System.out.println("开启事务");
         //获取目标方法的参数
@@ -62,7 +69,7 @@ public class LogAspectXml {
         return result;
     }
 
-
+    @AfterThrowing(value = "execution(* com.abyss.dao.CategoryDao.error(..))",throwing = "ex")
     public void afterthrowing(JoinPoint joinPoint,Throwable ex) {
         System.out.println("注意了:在" + joinPoint.getTarget().getClass().getName() + "中的"
                 + joinPoint.getSignature().getName() + "方法中发生了异常：" + ex.getMessage());

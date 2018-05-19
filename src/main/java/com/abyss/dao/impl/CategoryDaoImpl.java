@@ -6,6 +6,7 @@ import com.abyss.utils.JDBCUtils;
 import org.apache.commons.dbutils.QueryRunner;
 import org.apache.commons.dbutils.handlers.BeanHandler;
 import org.apache.commons.dbutils.handlers.BeanListHandler;
+import org.springframework.stereotype.Repository;
 
 import java.sql.Connection;
 import java.sql.SQLException;
@@ -15,6 +16,7 @@ import java.util.List;
  * Created by Abyss on 2018/5/5.
  * description:
  */
+@Repository("categoryDao")
 public class CategoryDaoImpl implements CategoryDao {
 
     private QueryRunner queryRunner = new QueryRunner(JDBCUtils.getDataSource());
