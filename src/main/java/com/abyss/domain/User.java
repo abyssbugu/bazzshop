@@ -14,7 +14,6 @@ public class User {
     private String hobby;
     private String email;
     private Integer age;
-    private Product product;
 
     public User() {
     }
@@ -109,11 +108,10 @@ public class User {
                 ", hobby='" + hobby + '\'' +
                 ", email='" + email + '\'' +
                 ", age=" + age +
-                ", product=" + product +
                 '}';
     }
 
-    public void setProduct(Product product) {
-        this.product = product;
+    public void printSome() {
+        System.out.println("保存完毕" + toString());
     }
 }

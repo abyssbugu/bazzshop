@@ -1,4 +1,4 @@
-package com.abyss.factory;
+package com.abyss.proxy;
 
 import com.abyss.dao.UserDao;
 import com.abyss.dao.impl.UserDaoImpl;
