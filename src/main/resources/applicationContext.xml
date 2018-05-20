@@ -10,7 +10,6 @@
     <!--开启自动代理-->
     <aop:aspectj-autoproxy/>
 
-
     <bean id="user" class="com.abyss.domain.User">
         <property name="username" value="BOSS"/>
         <property name="password" value="321"/>
@@ -18,6 +17,7 @@
     <bean id="queryRunner" class="org.apache.commons.dbutils.QueryRunner">
         <constructor-arg name="ds" ref="dataSource"/>
     </bean>
+    <!-- 配置数据源 -->
     <bean id="dataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource">
         <property name="driverClass" value="com.mysql.jdbc.Driver"/>
         <property name="jdbcUrl" value="jdbc:mysql://localhost:3306/test1"/>
